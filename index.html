@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <script type="module" src="/index.js" defer></script>
+    <style>
+      .slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .imgboxs {
+        display: flex;
+        overflow: hidden;
+      }
+      .imgbox {
+        width: calc(180px * 3);
+        height: calc(180px * 2);
+        min-width: 100%;
+        transition: transform 0.5s ease;
+      }
+      .imgbox img {
+        height: 100%;
+        object-fit: fill;
+        width: 100%;
+        display: block;
+      }
+      .arrow-left,
+      .arrow-right {
+        width: 30px;
+
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        :hover {
+          background-color: pink;
+          transition: 1s;
+        }
+      }
+      .arrow-left {
+        left: 10px;
+      }
+      .arrow-right {
+        margin-top: -30px;
+        right: 10px;
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+      }
+      .navigation-dots {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+      }
+      .navigation-dots input[type="radio"] {
+        margin: 0 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>до переключения </span>
+    </div>
+    <div class="slider">
+      <span class="arrow-left">
+        <svg
+          width="30px"
+          height="30px"
+          viewBox="0 0 1024 1024"
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+            fill="#000000" />
+        </svg>
+      </span>
+      <div class="imgboxs"></div>
+      <div class="arrow-right">
+        <svg
+          width="30px"
+          height="30px"
+          viewBox="0 0 1024 1024"
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+            fill="#000000" />
+        </svg>
+      </div>
+    </div>
+    <div class="navigation-dots"></div>
+  </body>
+</html>
